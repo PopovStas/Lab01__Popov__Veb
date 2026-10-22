@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Замовлення на товар</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2 align="center">Лабораторна робота №7</h2>
+<form action="Dyakuymo.htm" method="post" target="_blank">
+
+    Номер банківського рахунку:
+    <input type="text" name="account" size="29" maxlength="29">
+    <br><br>
+
+    Особистий номер користувача:
+    <input type="text" name="userid" size="15" maxlength="15">
+    <br><br>
+
+    Оберіть товари (можна вибрати декілька, утримуючи Ctrl):<br>
+    <select name="goods" size="5" multiple>
+        <option value="laptop" selected>Ноутбук</option>
+        <option value="monitor">Монітор</option>
+        <option value="keyboard">Клавіатура</option>
+        <option value="mouse">Комп'ютерна миша</option>
+        <option value="printer">Принтер</option>
+    </select>
+    <br><br>
+
+    Ваші коментарі:<br>
+    <textarea name="comments" rows="5" cols="50" wrap="virtual"></textarea>
+    <br><br>
+
+    Вид оплати:<br>
+    <input type="radio" name="payment" value="cash" checked> Готівковий розрахунок<br>
+    <input type="radio" name="payment" value="cashless"> Безготівковий розрахунок
+    <br><br>
+
+    Яку додаткову інформацію Ви бажаєте одержати у відповіді:<br>
+    <input type="checkbox" name="balance" value="yes"> Дані про залишки на рахунку<br>
+    <input type="checkbox" name="payments" value="yes"> Список останніх виплат по рахунку
+    <br><br>
+
+    <input type="submit" value=" Відіслати замовлення ">
+    <input type="reset" value=" Очистити форму ">
+</form>
+</body>
+</html>
