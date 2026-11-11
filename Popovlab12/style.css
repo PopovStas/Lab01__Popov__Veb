@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Verdana, Arial, sans-serif;
+    color: #222;
+}
+
+/* ---------- Шапка ---------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #42A5F5;
+    border-bottom: 2px solid #D9534F;
+    padding: 4px 20px;
+}
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #111;
+}
+.logo p {
+    margin: 0 0 0 16px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+}
+.nav a {
+    margin-left: 16px;
+    color: #111;
+    text-decoration: none;
+}
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Основна частина ---------- */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* ---------- Підвал ---------- */
+.footer {
+    background-color: #263238;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    padding: 40px 10px;
+}
+.footer p {
+    margin: 0;
+}
+
+/* ---------- Форма реєстрації ---------- */
+.register {
+    width: 360px;
+    margin: 0 auto;
+    border: 1px solid #D9534F;
+}
+.register h2 {
+    margin: 0;
+    padding: 10px;
+    background-color: #42A5F5;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+.register form {
+    padding: 14px 10px;
+}
+.register label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 11px;
+}
+.register label.big {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.register input,
+.register select {
+    display: block;
+    width: 100%;
+    height: 32px;
+    margin-bottom: 14px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+}
+.register .btn-row {
+    text-align: right;
+}
+.register button {
+    padding: 6px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* ---------- Сторінка з командами Git ---------- */
+.commands {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.commands h2 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+.commands .blue   { color: #4F81A6; }
+.commands .green  { color: #6AA84F; }
+.commands .green2 { color: #5B9A3C; }
+.commands .orange { color: #E8590C; }
+.commands .red    { color: #D9480F; }
+.commands p {
+    margin: 0 0 4px;
+    font-size: 12px;
+}
+.commands code {
+    display: block;
+    margin-bottom: 16px;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+}
+.commands code.tight {
+    margin-bottom: 4px;
+}
+.commands a {
+    color: #1A5FB4;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .commands { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+    .commands { grid-template-columns: 1fr; }
+    .register { width: 100%; }
+}

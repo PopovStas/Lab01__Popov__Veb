@@ -1,0 +1,61 @@
+/* Спільний файл стилів для всіх сторінок сайту */
+body {
+    background-image: url(images/bg.png);
+    background-color: #E2E0C8;
+    font-family: Verdana, Arial;
+    font-size: 16px;
+    font-style: italic;
+    color: #222222;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+h1 {
+    font-weight: bold;
+    text-align: center;
+    color: #3B5323;
+    font-style: normal;
+    font-size: 34px;
+}
+h2 {
+    color: #6B4E16;
+    font-style: normal;
+    font-size: 22px;
+}
+p {
+    text-align: justify;
+    text-indent: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+li {
+    margin-left: 5%;
+}
+img {
+    border: 3px solid #3B5323;
+    margin: 8px 15px;
+}
+img.right { float: right; }
+img.left  { float: left; }
+p.menu {
+    text-align: center;
+    text-indent: 0;
+    font-style: normal;
+    font-weight: bold;
+}
+/* Посилання */
+a:link {
+    color: green;
+    text-decoration: none;
+}
+a:active {
+    color: #0000FF;
+    text-decoration: none;
+}
+a:visited {
+    color: DarkBlue;
+    text-decoration: none;
+}
+a:hover {
+    color: Red;
+    text-decoration: underline;
+}
