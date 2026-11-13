@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивна розмітка: float</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        .wrapper::after { content: ""; display: table; clear: both; }
+        .block {
+            float: left;
+            margin: 3px;
+            border: 1px solid #ddd;
+            width: calc(var(--w) - 6px);
+            height: calc(var(--h) - 6px);
+            min-height: 70px;
+        }
+        .header { background: #5B9BD5; --w: 100%; --h: 14.28vh; }
+        .side   { background: #6E7D82; --w: 100%; --h: 14.28vh; }
+        .cyan   { background: #5BD1D1; --w: 100%; --h: 14.28vh; }
+        .red    { background: #E16B6B; --w: 100%; --h: 14.28vh; }
+        .yellow { background: #FFC000; --w: 100%; --h: 14.28vh; float: right; }
+        .green  { background: #31A475; --w: 100%; --h: 14.28vh; }
+        .footer { background: #C55A11; --w: 100%; --h: 14.28vh; }
+        @media (min-width: 500px) {
+            .header, .side { --h: 18vh; }
+            .side   { --h: 12vh; }
+            .cyan, .red { --w: 50%; --h: 16vh; }
+            .yellow { --h: 16vh; }
+            .green  { --h: 18vh; }
+            .footer { --h: 20vh; }
+        }
+        @media (min-width: 750px) {
+            .header { --h: 25vh; }
+            .side   { --h: 10vh; }
+            .cyan, .red { --w: 30%; --h: 20vh; }
+            .yellow { --w: 40%; --h: 45vh; }
+            .green  { --w: 60%; --h: 25vh; }
+            .footer { --h: 20vh; }
+        }
+        @media (min-width: 950px) {
+            .header { --w: 75%; --h: 31vh; }
+            .side   { --w: 25%; --h: 80vh; float: right; }
+            .cyan, .red { --w: 22.5%; --h: 22vh; }
+            .yellow { --w: 30%; --h: 49vh; }
+            .green  { --w: 45%; --h: 27vh; }
+        }
+        @media (min-width: 1200px) {
+            .header { --w: 80%; }
+            .side   { --w: 20%; }
+            .cyan, .red { --w: 24%; }
+            .yellow { --w: 32%; }
+            .green  { --w: 48%; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="block header"></div>
+    <div class="block side"></div>
+    <div class="block cyan"></div>
+    <div class="block red"></div>
+    <div class="block yellow"></div>
+    <div class="block green"></div>
+    <div class="block footer"></div>
+</div>
+</body>
+</html>

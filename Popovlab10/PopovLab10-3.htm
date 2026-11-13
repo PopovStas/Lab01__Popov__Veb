@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивна розмітка: grid layout</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        .wrapper {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(7, minmax(70px, 1fr));
+            grid-template-areas:
+                "header"
+                "side"
+                "cyan"
+                "red"
+                "yellow"
+                "green"
+                "footer";
+        }
+        .block { margin: 3px; border: 1px solid #ddd; }
+
+        .header { grid-area: header; background: #5B9BD5; }
+        .side   { grid-area: side;   background: #6E7D82; }
+        .cyan   { grid-area: cyan;   background: #5BD1D1; }
+        .red    { grid-area: red;    background: #E16B6B; }
+        .yellow { grid-area: yellow; background: #FFC000; }
+        .green  { grid-area: green;  background: #31A475; }
+        .footer { grid-area: footer; background: #C55A11; }
+        @media (min-width: 500px) {
+            .wrapper {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 18fr 12fr 16fr 16fr 18fr 20fr;
+                grid-template-areas:
+                    "header header"
+                    "side   side"
+                    "cyan   red"
+                    "yellow yellow"
+                    "green  green"
+                    "footer footer";
+            }
+        }
+        @media (min-width: 750px) {
+            .wrapper {
+                grid-template-columns: 3fr 3fr 4fr;
+                grid-template-rows: 25fr 10fr 20fr 25fr 20fr;
+                grid-template-areas:
+                    "header header header"
+                    "side   side   side"
+                    "cyan   red    yellow"
+                    "green  green  yellow"
+                    "footer footer footer";
+            }
+        }
+        @media (min-width: 950px) {
+            .wrapper {
+                grid-template-columns: 9fr 9fr 12fr 10fr;
+                grid-template-rows: 31fr 22fr 27fr 20fr;
+                grid-template-areas:
+                    "header header header side"
+                    "cyan   red    yellow side"
+                    "green  green  yellow side"
+                    "footer footer footer footer";
+            }
+        }
+        @media (min-width: 1200px) {
+            .wrapper { grid-template-columns: 12fr 12fr 16fr 10fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="block header"></div>
+    <div class="block side"></div>
+    <div class="block cyan"></div>
+    <div class="block red"></div>
+    <div class="block yellow"></div>
+    <div class="block green"></div>
+    <div class="block footer"></div>
+</div>
+</body>
+</html>

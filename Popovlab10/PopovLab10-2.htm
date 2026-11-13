@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивна розмітка: flexbox</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        .wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+        .block { margin: 3px; border: 1px solid #ddd; min-height: 70px; }
+
+        .top, .mid, .left, .pair { display: flex; flex-direction: column; }
+        .top  { flex: 1 1 0px; }
+        .main { display: contents; }
+
+        .header { background: #5B9BD5; flex: 1 1 0px; order: 1; }
+        .side   { background: #6E7D82; flex: 1 1 0px; order: 2; }
+        .mid    { flex: 4 1 0px; order: 3; }
+        .left   { flex: 3 1 0px; order: 1; }
+        .pair   { flex: 2 1 0px; }
+        .cyan   { background: #5BD1D1; flex: 1 1 0px; }
+        .red    { background: #E16B6B; flex: 1 1 0px; }
+        .green  { background: #31A475; flex: 1 1 0px; }
+        .yellow { background: #FFC000; flex: 1 1 0px; order: 2; }
+        .footer { background: #C55A11; flex: 0 0 20vh; }
+        @media (min-width: 500px) {
+            .pair { flex-direction: row; }
+            .pair { flex: 1 1 0px; }
+            .green { flex: 1 1 0px; }
+        }
+        @media (min-width: 750px) {
+            .header { flex: 25 1 0px; }
+            .side   { flex: 10 1 0px; }
+            .mid    { flex-direction: row; flex: 45 1 0px; }
+            .left   { flex: 6 1 0px; }
+            .pair   { flex: 20 1 0px; }
+            .green  { flex: 25 1 0px; }
+            .yellow { flex: 4 1 0px; }
+        }
+        @media (min-width: 950px) {
+            .top  { flex-direction: row; }
+            .main { display: flex; flex-direction: column; flex: 3 1 0px; }
+            .header { order: 0; flex: 31 1 0px; }
+            .mid    { order: 0; flex: 49 1 0px; }
+            .side   { order: 0; flex: 1 1 0px; }
+        }
+        @media (min-width: 1200px) {
+            .main { flex: 4 1 0px; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="top">
+        <div class="main">
+            <div class="block header"></div>
+            <div class="mid">
+                <div class="left">
+                    <div class="pair">
+                        <div class="block cyan"></div>
+                        <div class="block red"></div>
+                    </div>
+                    <div class="block green"></div>
+                </div>
+                <div class="block yellow"></div>
+            </div>
+        </div>
+        <div class="block side"></div>
+    </div>
+    <div class="block footer"></div>
+</div>
+</body>
+</html>
