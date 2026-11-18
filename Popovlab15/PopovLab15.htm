@@ -1,0 +1,204 @@
+<html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 { color: #333; }
+        .task-block {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover { background-color: #0056b3; }
+        #result-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Лабораторна робота 1.15</h1>
+    <p>Натискайте кнопки, щоб виконати відповідні завдання. Результати скриптів, які не використовують alert, дивіться в консолі (F12) або на екрані.</p>
+
+    <div class="task-block">
+        <h3>Завдання 1: Прості числа (цикл while)</h3>
+        <p>Вивести всі прості числа від 0 до 100 у консоль.</p>
+        <button onclick="task1()">Виконати</button>
+    </div>
+
+    <div class="task-block">
+        <h3>Завдання 2: Парні/непарні (цикл do...while)</h3>
+        <p>Вивести числа від 0 до 10 з описом (0 - це нуль, 1 - непарне тощо).</p>
+        <button onclick="task2()">Виконати</button>
+    </div>
+
+    <div class="task-block">
+        <h3>Завдання 3.1: Ділення 10000 на 2</h3>
+        <p>Поділити число, поки результат не стане менше 50. Результат у консоль.</p>
+        <button onclick="task3_1()">Виконати</button>
+    </div>
+
+    <div class="task-block">
+        <h3>Завдання 3.2: Пора року та місяць</h3>
+        <p>Ввести номер місяця (1-12) і отримати назву та пору року через alert.</p>
+        <button onclick="task3_2()">Виконати</button>
+    </div>
+
+    <div class="task-block">
+        <h3>Завдання 3.3: Цельсій у Фаренгейт</h3>
+        <p>Ввести температуру в Цельсіях і отримати результат у Фаренгейтах через alert.</p>
+        <button onclick="task3_3()">Виконати</button>
+    </div>
+
+    <div class="task-block">
+        <h3>Завдання 3.4: День тижня</h3>
+        <p>Ввести число від 1 до 7 і побачити назву дня на сторінці.</p>
+        <button onclick="task3_4()">Виконати</button>
+    </div>
+
+    <!-- Контейнер для виводу 4-го завдання -->
+    <div id="result-container">
+        <h3>Результат:</h3>
+        <p id="output-text"></p>
+    </div>
+
+    <script>
+        // Завдання 1
+        function task1() {
+            console.log("Завдання 1: Прості числа від 0 до 100");
+            let num = 2;
+            while (num <= 100) {
+                let isPrime = true;
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime) {
+                    console.log(num);
+                }
+                num++;
+            }
+        }
+
+        // Завдання 2
+        function task2() {
+            console.log("Завдання 2: Числа від 0 до 10 (do...while) ");
+            let i = 0;
+            do {
+                if (i === 0) {
+                    console.log(`${i} - це нуль`);
+                } else if (i % 2 === 0) {
+                    console.log(`${i} - парне число`);
+                } else {
+                    console.log(`${i} - непарне число`);
+                }
+                i++;
+            } while (i <= 10);
+        }
+
+        // Завдання 3.1
+        function task3_1() {
+            let numb = 10000;
+            let result = numb;
+            let counter = 0;
+
+            while (result >= 50) {
+                result = result / 2;
+                counter++;
+            }
+            console.log("Завдання 3.1");
+            console.log("Початкове число:", numb);
+            console.log("Результат (result):", result);
+            console.log("Кількість ітерацій (counter):", counter);
+        }
+
+        // Завдання 3.2
+        function task3_2() {
+            let month = parseInt(prompt("Введіть номер місяця (від 1 до 12):"));
+            let monthName = "";
+            let season = "";
+
+            if (month >= 1 && month <= 12) {
+                switch (month) {
+                    case 1: monthName = "Січень"; season = "Зима"; break;
+                    case 2: monthName = "Лютий"; season = "Зима"; break;
+                    case 3: monthName = "Березень"; season = "Весна"; break;
+                    case 4: monthName = "Квітень"; season = "Весна"; break;
+                    case 5: monthName = "Травень"; season = "Весна"; break;
+                    case 6: monthName = "Червень"; season = "Літо"; break;
+                    case 7: monthName = "Липень"; season = "Літо"; break;
+                    case 8: monthName = "Серпень"; season = "Літо"; break;
+                    case 9: monthName = "Вересень"; season = "Осінь"; break;
+                    case 10: monthName = "Жовтень"; season = "Осінь"; break;
+                    case 11: monthName = "Листопад"; season = "Осінь"; break;
+                    case 12: monthName = "Грудень"; season = "Зима"; break;
+                }
+                alert(`Місяць: ${monthName}\nПора року: ${season}`);
+            } else {
+                alert("Некоректне число! Введіть від 1 до 12.");
+            }
+        }
+
+        // Завдання 3.3
+        function task3_3() {
+            let tc = parseFloat(prompt("Введіть температуру за Цельсієм (наприклад, 25):"));
+            if (!isNaN(tc)) {
+                let tf = (9 / 5) * tc + 32;
+                alert(`${tc}°C = ${tf}°F`);
+            } else {
+                alert("Будь ласка, введіть число.");
+            }
+        }
+
+        // Завдання 3.4
+        function task3_4() {
+            let day = parseInt(prompt("Введіть число від 1 до 7:"));
+            let dayName = "";
+            let container = document.getElementById("result-container");
+            let output = document.getElementById("output-text");
+
+            if (day >= 1 && day <= 7) {
+                switch (day) {
+                    case 1: dayName = "Понеділок"; break;
+                    case 2: dayName = "Вівторок"; break;
+                    case 3: dayName = "Середа"; break;
+                    case 4: dayName = "Четвер"; break;
+                    case 5: dayName = "П'ятниця"; break;
+                    case 6: dayName = "Субота"; break;
+                    case 7: dayName = "Неділя"; break;
+                }
+                // Виводимо в вікно браузера (на сторінку)
+                container.style.display = "block";
+                output.innerHTML = `Ви ввели <b>${day}</b>. Це — <b>${dayName}</b>.`;
+            } else {
+                container.style.display = "block";
+                output.innerHTML = "<span style='color: red;'>Помилка! Введіть число від 1 до 7.</span>";
+            }
+        }
+    </script>
+</body>
+</html>
